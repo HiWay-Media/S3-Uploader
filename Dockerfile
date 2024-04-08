@@ -1,5 +1,5 @@
 FROM swift:focal-slim
-RUN  apt update && apt-get -y install cron curl mysql-client-core-8.0 jq iproute2
+RUN  apt update && apt-get -y install cron curl mysql-client-core-8.0 jq iproute2 wget
 # Setup cron to run every minute to print (you can add/update your cron here)
 RUN touch /var/log/cron-1.log
 # Download and copy the Caddy executable
