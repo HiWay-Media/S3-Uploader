@@ -1,0 +1,11 @@
+{
+       order s3proxy last
+       debug
+       admin 0.0.0.0:2019
+
+}
+
+:2080 {
+ log
+ respond /health-check "OK" 200
+}

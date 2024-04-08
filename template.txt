@@ -1,0 +1,43 @@
+{
+\"match\":[
+     {
+        \"path\":[
+           \"/$name/*\"
+        ]
+     }
+  ],
+  \"handle\":[
+     {
+        \"handler\":\"subroute\",
+        \"routes\":[
+           {
+              \"handle\":[
+                 {
+                    \"handler\":\"rewrite\",
+                    \"strip_path_prefix\":\"/$name\"
+                 }
+              ]
+           },
+           {
+              \"handle\":[
+                 {
+                    \"BrowseTemplate\":\"\",
+                    \"EnableBrowse\":true,
+                    \"EnableDelete\":false,
+                    \"EnablePut\":true,
+                    \"Hide\":null,
+                    \"bucket\":\"$s3_bucket\",
+                    \"endpoint\":\"$s3_host\",
+                    \"force_path_style\":true,
+                    \"handler\":\"s3proxy\",
+                    \"index_names\":[
+                       \"\"
+                    ],
+                    \"region\":\"us-east-1\"
+                 }
+              ]
+           }
+        ]
+     }
+  ]
+}
