@@ -5,7 +5,7 @@ RUN touch /var/log/cron-1.log
 # Download and copy the Caddy executable
 RUN wget -O caddy https://github.com/caddyserver/caddy/releases/download/v2.4.6/caddy_2.4.6_linux_amd64
 #
-ADD caddy /
+#ADD caddy /
 ADD template.txt /
 #ADD start.sh /
 #ADD route.sh /
